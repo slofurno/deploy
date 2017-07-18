@@ -4,6 +4,7 @@ metadata:
   name: rolling-deploy-test
 spec:
   replicas: 3
+  revisionHistoryLimit: 1
   template:
     metadata:
       labels:

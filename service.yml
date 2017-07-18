@@ -2,6 +2,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: ready
+  labels:
+    app: deploy-test
 spec:
   selector:
     app: deploy-test
