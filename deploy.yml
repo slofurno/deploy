@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: rolling-deploy-test
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: deploy-test
+    spec:
+      containers:
+      - name: deploy-test
+        image: slofurno/deploy:v3.1
+        ports:
+        - containerPort: 80
+
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3008
+          periodSeconds: 5
+
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 3008
+          periodSeconds: 5

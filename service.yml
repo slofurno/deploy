@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ready
+spec:
+  selector:
+    app: deploy-test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3008
