@@ -2,3 +2,8 @@ language: go
 go:
 - '1.8'
 before_deploy: env
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: deploy.sh $TRAVIS_TAG
+sudo: required
