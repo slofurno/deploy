@@ -1,10 +1,10 @@
 language: go
 go:
 - '1.8'
-before_install:
+before_deploy:
+  - env
   - sudo apt-get update -qq
   - sudo apt-get install -qq gettext-base
-before_deploy: env
 deploy:
   - provider: script
     skip_cleanup: true
