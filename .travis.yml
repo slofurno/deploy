@@ -1,6 +1,7 @@
 language: go
 go:
 - '1.8'
+script: echo "ok"
 before_deploy:
   - env
   - sudo apt-get update -qq
