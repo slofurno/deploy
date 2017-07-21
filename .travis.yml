@@ -9,4 +9,6 @@ deploy:
   - provider: script
     skip_cleanup: true
     script: deploy.sh $TRAVIS_TAG
+    on:
+      tags: true
 sudo: required
