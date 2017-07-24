@@ -1,9 +1,8 @@
 language: go
 go:
 - '1.8'
-script: echo "ok"
+script: env
 before_deploy:
-  - env
   - sudo apt-get update -qq
   - sudo apt-get install -qq gettext-base
 deploy:
