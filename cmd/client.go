@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -27,10 +26,10 @@ func main() {
 		n, err := res.Body.Read(b)
 		if err == io.EOF {
 			break
-		} else if err != nil {
+		} else if err != nil || n == 0 {
 			log.Fatal(err)
 		}
-		fmt.Printf("read %d bytes\n", n)
+		log.Printf("read %d bytes\n", n)
 		time.Sleep(100 * time.Millisecond)
 	}
 }
