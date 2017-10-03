@@ -3,7 +3,7 @@ go:
 - '1.8'
 only:
   - master
-  - /^v[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/
+  - /^v[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}/
 script: env
 before_deploy:
   - sudo apt-get update -qq
