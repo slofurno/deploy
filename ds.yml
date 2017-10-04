@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: ds-test
+spec:
+  selector:
+    matchLabels:
+      name: ds-test
+  template:
+    metadata:
+      labels:
+        name: ds-test
+    spec:
+      hostNetwork: true
+      containers:
+      - name: ds-test
+        image: slofurno/deploy:v0.5.0
+        ports:
+        - containerPort: 3008
+          hostPort: 3008
