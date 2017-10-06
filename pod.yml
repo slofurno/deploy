@@ -10,6 +10,9 @@ spec:
     - name: node-stat
       hostPath:
         path: /proc/stat
+    - name: node-sys
+      hostPath:
+        path: /sys
   containers:
     - name: node-stats
       image: alpine
@@ -17,9 +20,11 @@ spec:
       volumeMounts:
         - mountPath: /node-meminfo
           name: node-meminfo
-      volumeMounts:
         - mountPath: /node-stat
           name: node-stat
+        - mountPath: /node-sys
+          name: node-sys
+          readOnly: true
       env:
         - name: MY_HOST_NAME
           valueFrom:
